@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Random Background</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/app.css">
+<style>
+body{
+    background-color: #02b3e4;
+}
+
+    #box{
+  border: 5px solid white;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 5px;
+  height: 120px;
+  width: 30%;
+  background-color: beige;
+
+    }
+
+</style>
+</head>
+<body>
+<h1> Background changer</h1>
+<div>
+<p> <strong>click the button to change the background colour of the box below</strong>
+<button onclick="changeBackground1()"> Change</button>
+</p>
+</div>
+<div id="box">
+</div>
+<p> <strong>feeling lucky click to change entire background colour</strong>
+    <button onclick="changeBackground()"> Change</button>
+    </p>
+<script>
+
+
+function rgb(){
+
+    var charct =new Array();;
+    var num= 3;
+    for(i=0; i<=2; i++){
+        charct[i]=Math.floor(Math.random()*256);
+
+    }
+    return `RGB(${charct[0]},${charct[1]},${charct[2]})`;
+
+}
+function changeBackground1(){
+
+   var col= rgb();
+
+    document.getElementById("box").style.background= col;
+
+}
+function changeBackground(){
+
+     document.body.style.background= rgb();
+
+ }
+
+</script>
+</div>
+
+</body>
+</html>
